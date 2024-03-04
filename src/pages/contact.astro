@@ -1,0 +1,62 @@
+---
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Contact',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contacto" title="Contacta con nosotros!" />
+  <ContactUs
+    title="¡Envíanos un mensaje hoy mismo!"
+    subtitle="Para respuestas más rápidas, explora nuestra sección de Preguntas Frecuentes. ¡Puede que encuentres la solución que buscas justo allí! Si no, nuestro equipo de soporte está encantado de ayudarte."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nombre',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Correo Electrónico',
+      },
+    ]}
+    textarea={{
+      label: 'Mensaje',
+    }}
+    disclaimer={{
+      label: 'Al enviar este formulario de contacto, reconoces y aceptas la recopilación de tu información personal.',
+    }}
+    description="Nuestro equipo de soporte generalmente responde dentro de las 24 horas hábiles."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Estamos aquí para ayudarte!"
+    items={[
+      {
+        title: 'Phone',
+        description: '+1 (234) 567-890',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Contacto',
+        description: 'contact@support.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Dirección',
+        description: 'Olímpica, 04710 Ciudad de México, CDMX, Mexico',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>

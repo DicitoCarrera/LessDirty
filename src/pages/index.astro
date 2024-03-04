@@ -1,0 +1,230 @@
+---
+import Prices from '~/components/widgets/Pricing.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+import FAQs from '~/components/widgets/FAQs.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import { headerData } from '~/navigation';
+
+const metadata = {
+  title: 'LessDirty',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header {...headerData} actions={[]} isSticky showToggleTheme />
+  </Fragment>
+
+  <!-- Hero Widget ******************* -->
+
+  <Hero2
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Comienza ya!',
+        href: '/contact',
+        target: '_blank',
+      },
+    ]}
+    image={{ src: '~/assets/images/LessDirty.webp', alt: 'LessDirty Hero Image' }}
+  >
+    <Fragment slot="title"> El servisos de lavandeia mas senscillo en el mundo </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="text-accent dark:text-white highlight"> LessDirty </span> es una plataforma sencilla para manejar tus
+      necesidades de lavandería
+    </Fragment>
+  </Hero2>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Servicios"
+    subtitle="LessDirty es una empresa que"
+    tagline="Los servicios que ofrecemos"
+    items={[
+      {
+        title: 'Ropa limpia a las puertas de tu casa',
+        description: 'Suscríbete y nosotros nos encargamos de mantener tu ropa limpia.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Excelencia en el cuidado de tu ropa',
+        description: 'Somos una empresa experta en manejo, cuidad y limpieza de tu ropa.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Excelencia en el cuidado de tu ropa',
+        description: 'Describe one of your services.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Ropa limpia a las puertas de tu casa',
+        description: 'Suscríbete y nosotros nos encargamos de mantener tu ropa limpia.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Excelencia en el cuidado de tu ropa',
+        description: 'Somos una empresa experta en manejo, cuidad y limpieza de tu ropa.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Excelencia en el cuidado de tu ropa',
+        description: 'Describe one of your services.',
+        icon: 'flat-color-icons:approval',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title="Elige tu plan de precios"
+    subtitle="Elige el que más te convenga"
+    prices={[
+      {
+        title: 'Básico',
+        subtitle: 'Optimal choice for personal use',
+        price: 1000,
+        period: 'Al mes',
+        items: [
+          {
+            description: 'Recogida y Entrega',
+          },
+          {
+            description: 'Recogida y Entrega',
+          },
+          {
+            description: '3 kg de ropa',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '#',
+        },
+      },
+      {
+        title: 'Estándar',
+        subtitle: 'Optimal choice for small teams',
+        price: 2000,
+        period: 'Al mes',
+        items: [
+          {
+            description: 'Recogida y Entrega',
+          },
+          {
+            description: 'Recogida y Entrega',
+          },
+          {
+            description: '6 kg de ropa',
+          },
+          {
+            description: '2 Edredón',
+          },
+          {
+            description: 'Recogida y Entrega',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '#',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'popular',
+      },
+      {
+        title: 'Premium',
+        subtitle: 'Optimal choice for companies',
+        price: 3000,
+        period: 'Al mes',
+        items: [
+          {
+            description: 'Recogida y Entrega',
+          },
+          {
+            description: 'Recogida y Entrega',
+          },
+          {
+            description: '12 Kg de ropa',
+          },
+          {
+            description: '5 Edredón',
+          },
+          {
+            description: 'Recogida y Entrega',
+          },
+          {
+            description: 'Recogida y Entrega',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '#',
+        },
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the powerful features that LessDirty offers and how it can elevate your web development journey."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why LessDirty?',
+        description:
+          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+      },
+      {
+        title: 'What do I need to start?',
+        description:
+          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+      },
+      {
+        title: 'How to install the Astro + Tailwind CSS template?',
+        description:
+          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+      },
+      {
+        title: "What's something that you don't understand?",
+        description:
+          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+      },
+      {
+        title: 'What is something that you would like to try again?',
+        description:
+          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+      },
+      {
+        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        description:
+          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <!-- <Stats
+    stats={[
+      { title: 'Downloads', amount: '132K' },
+      { title: 'Stars', amount: '24.8K' },
+      { title: 'Forks', amount: '10.3K' },
+      { title: 'Users', amount: '48.4K' },
+    ]}
+  /> -->
+</Layout>
